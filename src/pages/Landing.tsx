@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ClipboardCheck, CheckCircle, Home, LayoutGrid, Settings, ArrowRight } from 'lucide-react';
+import { scrollToSection } from '../utils/scroll';
 
 export const LandingPage: React.FC = () => {
   return (
@@ -28,9 +29,27 @@ const Header: React.FC = () => {
         </div>
         
         <nav className="hidden md:flex items-center space-x-8">
-          <a href="#features" className="text-gray-600 hover:text-black transition-colors">Features</a>
-          <a href="#how-it-works" className="text-gray-600 hover:text-black transition-colors">How It Works</a>
-          <a href="#testimonials" className="text-gray-600 hover:text-black transition-colors">Testimonials</a>
+          <a 
+            href="#features" 
+            onClick={scrollToSection('features')} 
+            className="text-gray-600 hover:text-black transition-colors"
+          >
+            Features
+          </a>
+          <a 
+            href="#how-it-works" 
+            onClick={scrollToSection('how-it-works')} 
+            className="text-gray-600 hover:text-black transition-colors"
+          >
+            How It Works
+          </a>
+          <a 
+            href="#testimonials" 
+            onClick={scrollToSection('testimonials')} 
+            className="text-gray-600 hover:text-black transition-colors"
+          >
+            Testimonials
+          </a>
         </nav>
         
         <Link
@@ -64,6 +83,7 @@ const Hero: React.FC = () => {
             </Link>
             <a
               href="#how-it-works"
+              onClick={scrollToSection('how-it-works')}
               className="px-6 py-3 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors text-center"
             >
               Learn More
